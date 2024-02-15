@@ -69,3 +69,18 @@ sequenceDiagram
 
     Note right of browser: The browser uses JavaScript code and manipulates DOM API to display notes
 ```
+
+# 0.6: New note in Single page app diagram
+```mermaid
+sequenceDiagram
+    participant browser
+    participant server
+        
+    Note right of browser: User types input into form and clicks "Save" button
+    Note right of browser: JavaScript adds input to collection of notes and calls function to redisplay notes
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    Note right of browser: POST request contains { "content": "HTML is easy", "date": "2023-1-1" }
+    activate server
+    server-->>browser: HTTP status code 201
+    deactivate server
+```
