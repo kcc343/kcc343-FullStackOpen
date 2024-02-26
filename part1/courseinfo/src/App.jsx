@@ -10,15 +10,9 @@ const Content = (props) => {
   console.log(props)
   return (
     <div>
-      <p>
-        {props.titleOne} {props.exerciseOne}
-      </p>    
-      <p>
-        {props.titleTwo} {props.exerciseTwo}
-      </p>
-      <p>
-        {props.titleThree} {props.exerciseThree}
-      </p>
+      <Part part={props.titleOne} exerciseNum={props.exerciseOne} />
+      <Part part={props.titleTwo} exerciseNum={props.exerciseTwo} />
+      <Part part={props.titleThree} exerciseNum={props.exerciseThree} />
     </div>
    
   )
@@ -28,6 +22,15 @@ const Total = (props) => {
   console.log(props)
   return (
     <p>Number of exercises {props.total}</p>
+  )
+}
+
+const Part = (props) => {
+  console.log(props)
+  return (
+    <p>
+      {props.part} {props.exerciseNum}
+    </p>  
   )
 }
 
